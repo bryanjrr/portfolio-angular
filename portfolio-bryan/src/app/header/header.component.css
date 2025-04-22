@@ -1,0 +1,117 @@
+/* Estilos generales del header */
+.header {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    padding: 0 3rem 0.5rem;
+    top: 0;
+    left: 0;
+    z-index: 220;
+    box-sizing: border-box;
+    /* Asegura que padding y bordes no afecten el tamaño total */
+}
+
+/* Estilos para el logo y el botón del menú */
+.logo-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    font-family: 'Russo One', sans-serif;
+    font-size: 3rem;
+    /* Esto equivale a text-5xl */
+    cursor: pointer;
+}
+
+.menu-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-btn i {
+    color: white;
+    font-size: 3rem;
+    /* Esto equivale a text-5xl */
+}
+
+/* Estilos para el menú de navegación */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-menu a {
+    color: white;
+    font-size: 1.875rem;
+    /* Esto equivale a text-3xl */
+    text-decoration: none;
+    font-family: sans-serif;
+    align-self: center;
+}
+
+/* Estilos para pantallas más grandes (mediana o superior) */
+@media (min-width: 768px) {
+    .header {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 4rem;
+        /* Ajustar el espacio entre los elementos de navegación */
+        width: 100%;
+        /* Asegura que el contenedor ocupe todo el ancho */
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
+
+/* Para dispositivos con pantallas pequeñas, ocultar el menú */
+@media (max-width: 1024px) {
+    .nav-menu {
+        display: none;
+    }
+}
+
+.hover-underline {
+    font-size: 2rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #ff0000, #e75f4d);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+    top: -5px;
+    transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+    transform: scaleX(1);
+}
