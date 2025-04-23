@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     z-index: 10;
+    align-items: center;
 }
 
 .logo {
@@ -50,7 +51,7 @@
 
 .nav-menu a {
     color: white;
-    font-size: 1.875rem;
+    font-size: 1.6rem;
     /* Esto equivale a text-3xl */
     text-decoration: none;
     font-family: sans-serif;
