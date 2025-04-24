@@ -1,0 +1,30 @@
+<section class="tech-section">
+    <h2 class="section-title">Tecnologías</h2>
+
+    <div class="gridTecnologias">
+        <div>
+            <h2>Frontend</h2>
+            <div class="gridTech">
+                <div *ngFor="let tech of frontend" class="cube-3d">
+                    <div class="card">
+                        <img [src]="tech.icon" alt="{{tech.name}}" width="40" height="40">
+                        <span>{{ tech.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Backend</h2>
+            <div class="gridTech">
+                <div *ngFor="let tech of backend" class="cube-3d">
+                    <div class="card" id={{tech.name}} (click)="rating(tech)">
+                        <img [src]="tech.icon" alt="{{tech.name}}" width="40" height="40">
+                        <span>{{ tech.name }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -4,12 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
+import { TechIconsComponent } from './tech-icons/tech-icons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    HeaderComponent
+    HeaderComponent,
+    TechIconsComponent
   ],
   imports: [
     BrowserModule,
