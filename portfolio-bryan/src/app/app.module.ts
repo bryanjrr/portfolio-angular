@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { TechIconsComponent } from './tech-icons/tech-icons.component';
 import { SobremiComponent } from './sobremi/sobremi.component';
 import { MisProyectos } from './mis-proyectos/mis-proyectos.component';
+import { estudiosComponent } from './estudios/estudios.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { MisProyectos } from './mis-proyectos/mis-proyectos.component';
     HeaderComponent,
     TechIconsComponent,
     SobremiComponent,
-    MisProyectos
+    MisProyectos,
+    estudiosComponent
   ],
   imports: [
     BrowserModule,

@@ -14,13 +14,21 @@
 .containerTitulo {
   color: white;
   font-size: 30px;
-  padding: 30px;
-  border: solid 1px white;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   display: flex;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
   width: 30%;
-  margin-bottom: 30px;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.containerTitulo:hover {
+  transform: translateY(-5px);
 }
 
 .titulo h2 {

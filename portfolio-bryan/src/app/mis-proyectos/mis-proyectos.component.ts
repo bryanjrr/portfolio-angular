@@ -44,7 +44,7 @@ export class MisProyectos {
       descripcion:
         'En mi 1r año de Ciclo Superior de Desarrollo de Aplicaciones Web desarrollé junto a mis compañeros Marc y David un proyecto donde simulamos la creación de una empresa llamada CompoTech que se dedicaba a la venta de componentes informáticos.',
       icono: 'fas fa-store',
-      imagen: 'assets/Proyectos/CompoTech/compotech-bg.png',
+      imagen: 'assets/Proyectos/Compotech/Compotech.png',
       tecnologias: [
         {
           categoria: 'Frontend',
@@ -69,7 +69,7 @@ export class MisProyectos {
       descripcion:
         'En DAW 2 durante mi etapa de en la empresa Strategyng realicé una página web donde los usuarios pueden publicar su propio blog, con la posibilidad de personalizar y ver posts de cualquier temática.',
       icono: 'fas fa-blog',
-      imagen: 'assets/Proyectos/BlogsByBryan/blogs-bg.png',
+      imagen: 'assets/Proyectos/BlogBryan/blogbryan.png',
       tecnologias: [
         {
           categoria: 'Frontend',
@@ -97,11 +97,11 @@ export class MisProyectos {
       descripcion:
         'Actualemente estoy en 2ndo año de DAW, y junto a mis compañeros Pol Carvajal y Marc Mutantes estamos programando una página web donde donde cuentas con un gran catálogo de películas de todo tipo disponibles para ver!',
       icono: 'fas fa-film',
-      imagen: 'assets/Proyectos/Cineflix/cineflix-bg.png',
+      imagen: 'assets/Proyectos/Cinefix/cineflix.png',
       tecnologias: [
         {
           categoria: 'Frontend',
-          lista: [{ nombre: 'Tailwind', icono: 'fab fa-tailwind' }],
+          lista: [{ nombre: 'Tailwind', ç: 'fab fa-tailwind' }],
         },
         {
           categoria: 'Backend',
@@ -116,7 +116,7 @@ export class MisProyectos {
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

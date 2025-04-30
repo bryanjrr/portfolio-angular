@@ -14,29 +14,35 @@
 .containerTitulo {
   color: white;
   font-size: 30px;
-  padding: 30px;
-  border: solid 1px white;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
   display: flex;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
   width: 30%;
-  margin-bottom: 30px;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.containerTitulo:hover {
+  transform: translateY(-5px);
 }
 
 :host {
   display: block;
-  background-color: #4b1c2e; /* Fondo rojo oscuro */
+  background-color: #450a0a;
   padding: 40px;
   font-family: "Lato", sans-serif;
   color: #ffffff;
 }
 
-/* Sección principal */
 .seccion {
   width: 100%;
 }
 
-/* Título y logo */
 .containerTitulo {
   display: flex;
   align-items: center;
@@ -54,20 +60,17 @@
   margin: 0;
 }
 
-/* Contenedor Grid */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%
 }
 
-/* Envoltura de la tarjeta con imagen de fondo */
 .card-wrapper {
   position: relative;
-  height: 500px; /* Ajusta según el tamaño de la imagen */
+  height: 500px;
 }
 
-/* Imagen de fondo */
 .card-image {
   position: absolute;
   width: 100%;
@@ -78,20 +81,18 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo de las tarjetas */
 .card {
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #1a1a1a; /* Fondo oscuro de las tarjetas */
+  background-color: #1a1a1a;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   padding: 20px;
-  width: 65%; /* Similar al md:w-[65%] */
+  width: 65%;
   z-index: 10;
 }
 
-/* Encabezado de la tarjeta */
 .card-header {
   display: flex;
   align-items: center;
@@ -109,7 +110,6 @@
   margin: 0;
 }
 
-/* Contenido de la tarjeta */
 .card-content p {
   font-size: 16px;
   line-height: 1.5;
@@ -117,7 +117,6 @@
   text-align: justify;
 }
 
-/* Sección de tecnologías */
 .tech-section h3 {
   font-size: 18px;
   font-weight: bold;
@@ -131,10 +130,11 @@
 }
 
 .tech-item {
-  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.tech-item p {
+.tech-section p {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -156,15 +156,18 @@
   margin-right: 5px;
 }
 
-/* Footer de la tarjeta */
 .card-footer {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
 
+.card-footer a {
+  text-decoration: none;
+}
+
 .btn-link {
-  color: #3b82f6; /* Azul para los enlaces */
+  color: #3b82f6;
   text-decoration: none;
   font-size: 16px;
   display: flex;
@@ -176,14 +179,13 @@
   text-decoration: underline;
 }
 
-/* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    grid-template-columns: 1fr;
   }
 
   .card-wrapper {
-    height: 600px; /* Ajusta según el diseño */
+    height: 600px;
   }
 
   .card {
