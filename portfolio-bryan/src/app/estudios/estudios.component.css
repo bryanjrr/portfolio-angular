@@ -1,6 +1,6 @@
 .seccion {
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, #450a0a 0%, #6b1c1c 100%);
+  background-color: #450a0a;
   color: white;
   font-family: "Lato", sans-serif;
   position: relative;
@@ -33,7 +33,7 @@
   transform: translateY(-5px);
 }
 
-.containerTitulo h2{
+.containerTitulo h2 {
   font-size: 36px;
 }
 
