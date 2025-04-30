@@ -75,7 +75,5 @@ export class SobremiComponent implements AfterViewInit {
 
   }
 
-
-
 }
 

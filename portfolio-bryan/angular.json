@@ -41,7 +41,6 @@
               "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
-              "node_modules/particles.js/particles.js"
             ]
           },
           "configurations": {
@@ -105,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "64b56fb5-5421-4d1c-8d86-fd5ee1439679"
   }
 }

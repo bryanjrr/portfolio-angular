@@ -23,104 +23,171 @@
   margin-bottom: 30px;
 }
 
-.titulo h2 {
-  font-weight: bold;
+:host {
+  display: block;
+  background-color: #4b1c2e; /* Fondo rojo oscuro */
+  padding: 40px;
+  font-family: "Lato", sans-serif;
+  color: #ffffff;
+}
+
+/* Sección principal */
+.seccion {
+  width: 100%;
+}
+
+/* Título y logo */
+.containerTitulo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .user-logo {
   font-size: 48px;
+  margin-right: 15px;
+  color: #ffffff;
 }
 
-.container {
-  background-color: black;
-  padding: 30px;
+.containerTitulo h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* Contenedor Grid */
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 20px;
 }
 
-#mapa {
-  width: 70%;
-  border-radius: 20px;
-  margin: 0 auto;
-  margin-top: 8%;
+/* Envoltura de la tarjeta con imagen de fondo */
+.card-wrapper {
+  position: relative;
+  height: 500px; /* Ajusta según el tamaño de la imagen */
 }
 
-.container .container-info {
+/* Imagen de fondo */
+.card-image {
+  position: absolute;
   width: 100%;
-  border-radius: 10%;
-  padding: 40px;
-  text-align: center;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.container .container-info img {
-  width: 90%;
-
+/* Estilo de las tarjetas */
+.card {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #1a1a1a; /* Fondo oscuro de las tarjetas */
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 65%; /* Similar al md:w-[65%] */
+  z-index: 10;
 }
 
-.container .container-info .container-logos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  align-items: center;
-  justify-content: space-around;
-  padding: 70px;
-}
-
-.containerIcono {
+/* Encabezado de la tarjeta */
+.card-header {
   display: flex;
-  gap: 7px;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 18px;
   align-items: center;
-  padding: 30px;
-  background-color: #1c1917;
-  border-radius: 30px;
-  height: 180px;
-  width: 180px;
+  margin-bottom: 20px;
 }
 
-.containerIcono .fa-phone {
-  font-size: 30px;
+.card-icon {
+  font-size: 48px;
+  margin-right: 15px;
+  color: #ffffff;
 }
 
-.container-info2 {
-  padding: 40px;
+.card-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Contenido de la tarjeta */
+.card-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
   text-align: justify;
 }
 
-.dropdown {
-  background-color: #1c1917;
+/* Sección de tecnologías */
+.tech-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tech-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tech-item {
+  flex: 1;
+}
+
+.tech-item p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tech-tag {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.tech-tag i {
+  margin-right: 5px;
+}
+
+/* Footer de la tarjeta */
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btn-link {
+  color: #3b82f6; /* Azul para los enlaces */
+  text-decoration: none;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  padding: 20px;
-  justify-content: space-between;
+  gap: 5px;
 }
 
-.dropdown h3 {
-  font-size: 25px;
+.btn-link:hover {
+  text-decoration: underline;
 }
 
-.dropdown-titulo {
-  font-size: 25px;
-}
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
 
-.dropdown-button {
-  background-color: #1c1917;
-  padding: 10px;
-  color: white;
-  font-size: 30px;
-  border-radius: 20px;
-}
+  .card-wrapper {
+    height: 600px; /* Ajusta según el diseño */
+  }
 
-.info {
-  font-size: 18px;
-  padding: 20px;
-  background: linear-gradient(to right, #e74c3c, #c0392b);
-  color: white;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1.5;
-  letter-spacing: 0.5px;
+  .card {
+    width: 80%;
+    left: 10%;
+  }
 }

@@ -1,47 +1,47 @@
 <section class="seccion">
   <article class="containerTitulo">
     <i class="fa-solid fa-user user-logo"></i>
-    <h2>Sobre Mi </h2>
+    <h2>Mis Proyectos</h2>
   </article>
 
-  <article class="container">
-    <div class="container-info">
-      <img src="assets/img/code.jpg" alt="code_img">
-
-      <!-- Mapa -->
-      <div id="mapa" style="height: 400px;"></div>
-
-      <div class="container-logos">
-        <div class="containerIcono">
-          <i class="fa-solid fa-phone"></i><span>+34634408901</span>
+  <div class="grid-container">
+    <div class="card-wrapper" *ngFor="let proyecto of proyectos">
+      <div
+        class="card-image"
+        style="
+          background-image: url('assets/Proyectos/CompoTech/compotech-bg.png');
+        "
+      ></div>
+      <div class="card">
+        <div class="card-header">
+          <i class="fas fa-store card-icon"></i>
+          <h1>{{ proyecto.titulo }}</h1>
         </div>
-        <div class="containerIcono">
-          <i class="fa-solid fa-envelope"></i><span>{{email}}</span>
-
-        </div>
-        <div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="container-info2">
-        <div *ngFor="let info of secciones">
-          <div class="dropdown">
-            <div class="flex dropdown-titulo">
-              <i class="fa-solid {{info.icono}}"></i>
-              <h3>{{info.nombre}}</h3>
+        <div class="card-content">
+          <p>
+            {{ proyecto.descripcion }}
+          </p>
+          <div class="tech-section">
+            <h3>Tecnologías Utilizadas:</h3>
+            <div class="tech-list">
+              <div class="tech-item">
+                <p>Tecnologias</p>
+                <span class="tech-tag" *ngFor="let tech of categoria.lista">
+                  <i class="tech.icono"></i>{{ tech.nombre }}
+                </span>
+              </div>
             </div>
-            <button class="dropdown-button">
-              <i class="fa-solid fa-angle-down"></i>
-            </button>
           </div>
-          <div class="info">
-            <p>{{info.descripcion}}</p>
+          <div class="card-footer">
+            <a href="#" class="btn-link"
+              >Más Información <i class="fas fa-info-circle"></i
+            ></a>
+            <a href="#" target="_blank" class="btn-link">
+              Link Repositorio <i class="fab fa-github"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
-    <!-- Hobbies & Habilidades Tecnicas -->
-  </article>
+  </div>
 </section>
