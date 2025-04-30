@@ -1,0 +1,47 @@
+<section class="seccion">
+  <article class="containerTitulo">
+    <i class="fa-solid fa-user user-logo"></i>
+    <h2>Sobre Mi </h2>
+  </article>
+
+  <article class="container">
+    <div class="container-info">
+      <img src="assets/img/code.jpg" alt="code_img">
+
+      <!-- Mapa -->
+      <div id="mapa" style="height: 400px;"></div>
+
+      <div class="container-logos">
+        <div class="containerIcono">
+          <i class="fa-solid fa-phone"></i><span>+34634408901</span>
+        </div>
+        <div class="containerIcono">
+          <i class="fa-solid fa-envelope"></i><span>{{email}}</span>
+
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container-info2">
+        <div *ngFor="let info of secciones">
+          <div class="dropdown">
+            <div class="flex dropdown-titulo">
+              <i class="fa-solid {{info.icono}}"></i>
+              <h3>{{info.nombre}}</h3>
+            </div>
+            <button class="dropdown-button">
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+          </div>
+          <div class="info">
+            <p>{{info.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hobbies & Habilidades Tecnicas -->
+  </article>
+</section>

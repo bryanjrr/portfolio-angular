@@ -3,24 +3,38 @@
 
     <div class="gridTecnologias">
         <div>
-            <h2>Frontend</h2>
+            <h2 class="frontend">Frontend</h2>
             <div class="gridTech">
-                <div *ngFor="let tech of frontend" class="cube-3d">
-                    <div class="card">
-                        <img [src]="tech.icon" alt="{{tech.name}}" width="40" height="40">
-                        <span>{{ tech.name }}</span>
+                <div class="cube-3d" *ngFor="let tech of frontend">
+                    <div class="relative" (click)="toggleCard(tech)" [class.rotate-180]="tech.flipped">
+                        <div class="cardFront ">
+                            <img [src]="tech.icon" alt="{{ tech.name }}" width="40" height="40">
+                            <span>{{ tech.name }}</span>
+                        </div>
+                        <div class="cardBack">
+                            <p>Rating</p>
+                            <span class="percentaje">{{tech.percentaje}}%</span>
+                            <div class="rating" [style.width]="tech.percentaje"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div>
-            <h2>Backend</h2>
+            <h2 class="backend">Backend</h2>
             <div class="gridTech">
-                <div *ngFor="let tech of backend" class="cube-3d">
-                    <div class="card" id={{tech.name}} (click)="rating(tech)">
-                        <img [src]="tech.icon" alt="{{tech.name}}" width="40" height="40">
-                        <span>{{ tech.name }}</span>
+                <div class="cube-3d" *ngFor="let tech of backend">
+                    <div class="relative" (click)="toggleCard(tech)" [class.rotate-180]="tech.flipped">
+                        <div class="cardFront ">
+                            <img [src]="tech.icon" alt="{{ tech.name }}" width="40" height="40">
+                            <span>{{ tech.name }}</span>
+                        </div>
+                        <div class="cardBack">
+                            <p>Rating</p>
+                            <span class="percentaje">{{tech.percentaje}}%</span>
+                            <div class="rating" [style.width]="tech.percentaje"></div>
+                        </div>
                     </div>
                 </div>
             </div>

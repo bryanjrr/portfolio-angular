@@ -1,0 +1,76 @@
+<section class="seccion">
+  <article class="containerTitulo">
+    <i class="fa-solid fa-user user-logo"></i>
+    <h2>Sobre Mi </h2>
+  </article>
+
+  <article class="container">
+    <div class="container-info">
+      <img src="assets/img/code.jpg" alt="code_img">
+
+      <!-- Mapa -->
+      <div id="mapa" style="height: 400px;"></div>
+
+      <div class="container-logos">
+        <div class="containerIcono">
+          <i class="fa-solid fa-phone"></i><span>+34634408901</span>
+        </div>
+        <div class="containerIcono">
+          <i class="fa-solid fa-envelope"></i><span>{{email}}</span>
+        </div>
+
+        <div>
+          <div class="containerIcono">
+            <i class="fa-brands fa-linkedin"></i><span>bryaanjrr</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="container-info2">
+        <div *ngFor="let info of secciones">
+          <div class="dropdown">
+            <div class="flex dropdown-titulo">
+              <i class="fa-solid {{info.icono}}"></i>
+              <h3>{{info.nombre}}</h3>
+            </div>
+            <button class="dropdown-button">
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+          </div>
+          <div class="info">
+            <p *ngIf="info.descripcion">{{ info.descripcion }}</p>
+
+            <div *ngIf="info.habilidades">
+              <div class="habilidad" *ngFor="let habilidad of info.habilidades">
+                <div class="habilidad-row">
+                  <span class="habilidad-nombre">{{ habilidad.nombre }}</span>
+                  <div class="estrellas">
+                    <span *ngFor="let i of getArray(habilidad.nivel)">
+                      <i class="fa-solid fa-star"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="info.hobbies" class="hobbies-container">
+              <div class="hobby-card" *ngFor="let hobby of info.hobbies">
+                <div class="hobby-icon">
+                  <i class="fa-solid {{hobby.icono}}"></i>
+                </div>
+                <div class="hobby-name">
+                  <span>{{ hobby.nombre }}</span>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hobbies & Habilidades Tecnicas -->
+  </article>
+</section>
