@@ -15,6 +15,9 @@ import { Component, AfterViewInit } from '@angular/core';
   repoUrl?: string;
 } */
 export class MisProyectos {
+
+  
+
   proyectos: any[] = [
     {
       titulo: 'Gestión Personas',

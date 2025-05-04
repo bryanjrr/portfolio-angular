@@ -8,7 +8,7 @@ import { TechIconsComponent } from './tech-icons/tech-icons.component';
 import { SobremiComponent } from './sobremi/sobremi.component';
 import { MisProyectos } from './mis-proyectos/mis-proyectos.component';
 import { estudiosComponent } from './estudios/estudios.component';
-
+import { proyectoDetalles } from './proyecto/proyecto.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +18,11 @@ import { estudiosComponent } from './estudios/estudios.component';
     TechIconsComponent,
     SobremiComponent,
     MisProyectos,
-    estudiosComponent
+    estudiosComponent,
+    proyectoDetalles,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

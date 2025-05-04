@@ -6,9 +6,7 @@
 
   <div class="grid-container">
     <div class="card-wrapper" *ngFor="let proyecto of proyectos">
-      <img class="card-image" [src]="
-          proyecto.imagen
-        ">
+      <img class="card-image" [src]="proyecto.imagen" />
       <div class="card">
         <div class="card-header">
           <i class="fas fa-store card-icon"></i>
@@ -25,21 +23,34 @@
               <div class="tech-item">
                 <div>
                   <p>Frontend</p>
-                  <span class="tech-tag" *ngFor="let technology of proyecto.tecnologias[0].lista">
-                    <i class="{{technology.icono}}"></i>{{ technology.nombre }}
+                  <span
+                    class="tech-tag"
+                    *ngFor="let technology of proyecto.tecnologias[0].lista"
+                  >
+                    <i class="{{ technology.icono }}"></i
+                    >{{ technology.nombre }}
                   </span>
                 </div>
                 <div>
                   <p>Backend</p>
-                  <span class="tech-tag" *ngFor="let technology of proyecto.tecnologias[1].lista">
-                    <i class="{{technology.icono}}"></i>{{ technology.nombre }}
+                  <span
+                    class="tech-tag"
+                    *ngFor="let technology of proyecto.tecnologias[1].lista"
+                  >
+                    <i class="{{ technology.icono }}"></i
+                    >{{ technology.nombre }}
                   </span>
                 </div>
               </div>
             </div>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn-link">Más Información <i class="fas fa-info-circle"></i></a>
+            <a
+              href="#"
+              [routerLink]="['/proyecto', proyecto.titulo]"
+              class="btn-link"
+              >Más Información <i class="fas fa-info-circle"></i
+            ></a>
             <a href="#" target="_blank" class="btn-link">
               Link Repositorio <i class="fab fa-github"></i>
             </a>
