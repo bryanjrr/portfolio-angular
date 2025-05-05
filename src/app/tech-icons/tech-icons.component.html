@@ -1,0 +1,44 @@
+<section class="tech-section">
+    <h2 class="section-title">Tecnologías</h2>
+
+    <div class="gridTecnologias">
+        <div>
+            <h2 class="frontend">Frontend</h2>
+            <div class="gridTech">
+                <div class="cube-3d" *ngFor="let tech of frontend">
+                    <div class="relative" (click)="toggleCard(tech)" [class.rotate-180]="tech.flipped">
+                        <div class="cardFront ">
+                            <img [src]="tech.icon" alt="{{ tech.name }}" width="40" height="40">
+                            <span>{{ tech.name }}</span>
+                        </div>
+                        <div class="cardBack">
+                            <p>Rating</p>
+                            <span class="percentaje">{{tech.percentaje}}%</span>
+                            <div class="rating" [style.width]="tech.percentaje"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="backend">Backend</h2>
+            <div class="gridTech">
+                <div class="cube-3d" *ngFor="let tech of backend">
+                    <div class="relative" (click)="toggleCard(tech)" [class.rotate-180]="tech.flipped">
+                        <div class="cardFront ">
+                            <img [src]="tech.icon" alt="{{ tech.name }}" width="40" height="40">
+                            <span>{{ tech.name }}</span>
+                        </div>
+                        <div class="cardBack">
+                            <p>Rating</p>
+                            <span class="percentaje">{{tech.percentaje}}%</span>
+                            <div class="rating" [style.width]="tech.percentaje"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

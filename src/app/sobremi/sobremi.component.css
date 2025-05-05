@@ -1,0 +1,235 @@
+.seccion {
+  padding: 3rem 2rem;
+  background-color: #450a0a;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.containerTitulo {
+  color: white;
+  font-size: 30px;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 30%;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.containerTitulo:hover {
+  transform: translateY(-5px);
+}
+
+.titulo h2 {
+  font-weight: bold;
+}
+
+.user-logo {
+  font-size: 48px;
+}
+
+.container {
+  background-color: black;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#mapa {
+  width: 70%;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+
+.container .container-info {
+  width: 100%;
+  border-radius: 10%;
+  padding: 40px;
+  text-align: center;
+}
+
+.container .container-info img {
+  width: 90%;
+
+}
+
+.container .container-info .container-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 70px;
+}
+
+.containerIcono {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18px;
+  align-items: center;
+  padding: 30px;
+  background-color: #1c1917;
+  border-radius: 30px;
+  height: 180px;
+  width: auto;
+}
+
+.containerIcono .fa-phone {
+  font-size: 30px;
+}
+
+.containerIcono .fa-envelope {
+  font-size: 30px;
+}
+
+.containerIcono .fa-linkedin {
+  font-size: 30px;
+}
+
+.container-info2 {
+  padding: 40px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dropdown {
+  background-color: #1c1917;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.dropdown h3 {
+  font-size: 25px;
+}
+
+.dropdown-titulo {
+  font-size: 25px;
+}
+
+.dropdown-button {
+  background-color: #1c1917;
+  padding: 10px;
+  color: white;
+  font-size: 30px;
+  border-radius: 20px;
+}
+
+.info {
+  font-size: 18px;
+  padding: 20px;
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  color: white;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.habilidad {
+  margin-bottom: 10px;
+}
+
+.habilidad-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habilidad-nombre {
+  font-weight: 500;
+  width: 200px;
+}
+
+.estrellas {
+  display: flex;
+  gap: 2px;
+  color: lightgoldenrodyellow;
+}
+
+/* Estilo general de la contenedor de hobbies */
+.hobbies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.hobby-card {
+  cursor: pointer;
+  background: linear-gradient(145deg, #f44336, #d32f2f);
+  border-radius: 10px;
+  width: 150px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hobby-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #d32f2f, #c62828);
+}
+
+.hobby-icon {
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.hobby-name span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.hobby-card:hover .hobby-name span {
+  text-shadow: 0.2px 0.2px 0.2px;
+}
+
+@media (max-width: 768px) {
+  .hobbies-container {
+    justify-content: center;
+  }
+
+  .hobby-card {
+    width: 120px;
+    padding: 15px;
+  }
+
+  .hobby-icon {
+    font-size: 30px;
+  }
+
+  .hobby-name span {
+    font-size: 14px;
+  }
+}

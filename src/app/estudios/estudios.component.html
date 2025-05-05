@@ -1,0 +1,18 @@
+<section class="seccion">
+  <article class="containerTitulo">
+    <i class="fa-solid fa-suitcase user-logo"></i>
+    <h2>Estudios & Experiencia</h2>
+  </article>
+  <div class="container">
+    <div class="card" *ngFor="let tarjeta of tarjetas; let i = index"
+      [ngClass]="{'card-left': i % 2 === 0, 'card-right': i % 2 !== 0}">
+      <img [src]="tarjeta.imagen" [alt]="tarjeta.alt">
+      <div class="card-text">
+        <h2>{{ tarjeta.titulo }}</h2>
+        <p>{{ tarjeta.descripcion }}</p>
+<!--         <a [href]="tarjeta.enlace" class="btn-link">Más Información <i class="fas fa-info-circle"></i></a>
+ -->      </div>
+
+    </div>
+  </div>
+</section>

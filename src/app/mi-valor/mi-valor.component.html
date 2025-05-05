@@ -1,0 +1,13 @@
+<section class="seccion">
+    <article class="containerTitulo">
+        <i class="fa-solid fa-building user-logo"></i>
+        <h2>Mi Valor en tu Empresa</h2>
+    </article>
+    <div class="habilidades-container">
+        <div class="habilidad-card" *ngFor="let hab of habilidades; let i = index">
+            <div class="card-icon">{{ i + 1 }}</div>
+            <h3 class="card-title">{{ hab.titulo }}</h3>
+            <p class="card-desc">{{ hab.descripcion }}</p>
+        </div>
+    </div>
+</section>

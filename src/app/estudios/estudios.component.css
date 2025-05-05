@@ -1,0 +1,209 @@
+.seccion {
+  padding: 3rem 2rem;
+  background-color: #450a0a;
+  color: white;
+  font-family: "Lato", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.containerTitulo {
+  color: white;
+  font-size: 30px;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 30%;
+  margin: 40px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.containerTitulo:hover {
+  transform: translateY(-5px);
+}
+
+.containerTitulo h2 {
+  font-size: 36px;
+}
+
+
+.titulo h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.user-logo {
+  font-size: 48px;
+  color: #ffcccb;
+  transition: transform 0.3s ease;
+}
+
+
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 50px;
+  width: 45%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card-text {
+  background: #ffffff;
+  color: #333;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #ff6f61, #ffcccb);
+  transition: width 0.3s ease;
+}
+
+.card-text:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-text:hover::before {
+  width: 100%;
+}
+
+.card-text h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #450a0a;
+}
+
+.card-text p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.card a {
+  text-decoration: none;
+  color: #ff6f61;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgba(255, 111, 97, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card a:hover {
+  background: #ff6f61;
+  color: white;
+  transform: translateX(5px);
+}
+
+.card a i {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.card a:hover i {
+  transform: rotate(360deg);
+}
+
+.card-left {
+  left: 0;
+  width: 50%;
+  color: #383535;
+}
+
+
+.card-right {
+  left: 50%;
+  z-index: 3;
+  color: #383535;
+}
+
+.card-left img {
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 60px;
+  padding: 8px;
+  right: -31px;
+  top: 15%;
+  z-index: 3;
+  background: linear-gradient(135deg, #ffffff, #ffcccb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card-right img {
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 60px;
+  padding: 8px;
+  left: -31px;
+  top: 15%;
+  background: linear-gradient(135deg, #ffffff, #ffcccb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.15);
+}
+
+.container::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #ffffff, #ffcccb);
+  margin-left: -2px;
+  height: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .containerTitulo {
+    width: 80%;
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 30px;
+    left: 0 !important;
+  }
+}

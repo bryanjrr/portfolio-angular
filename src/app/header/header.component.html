@@ -1,0 +1,22 @@
+<header class="header">
+    <div class="logo-menu">
+        <h2 class="logo" (click)="scrollTo('inicio')">BryanJr</h2>
+        <div id="menuBtn" class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+    <div>
+        <nav id="listMenu" class="nav-menu">
+            <a (click)="scrollTo('inicio')" [routerLink]="['/']" class="nav-link hover-underline"><i
+                    class="fa-solid fa-house"></i> Inicio</a>
+            <a (click)="scrollTo('sobremi')" class="nav-link hover-underline"><i class="fa-solid fa-user"></i> Sobre
+                Mi</a>
+            <a (click)="scrollTo('estudios')" class="nav-link hover-underline"><i class="fa-solid fa-books"></i>
+                Estudios</a>
+            <a (click)="scrollTo('proyectos')" class="nav-link hover-underline"><i class="fa-solid fa-code"></i>
+                Proyectos</a>
+            <a (click)="scrollTo('mivalor')" class="nav-link hover-underline"><i class="fa-solid fa-suitcase"></i> Mi
+                Valor</a>
+        </nav>
+    </div>
+</header>
