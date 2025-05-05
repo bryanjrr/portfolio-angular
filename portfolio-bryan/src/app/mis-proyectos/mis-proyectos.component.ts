@@ -16,8 +16,6 @@ import { Component, AfterViewInit } from '@angular/core';
 } */
 export class MisProyectos {
 
-  
-
   proyectos: any[] = [
     {
       titulo: 'Gestión Personas',
@@ -68,7 +66,7 @@ export class MisProyectos {
       enlaceMasInfo: '#',
     },
     {
-      titulo: 'Blogs by Bryan',
+      titulo: 'Blog Bryan',
       descripcion:
         'En DAW 2 durante mi etapa de en la empresa Strategyng realicé una página web donde los usuarios pueden publicar su propio blog, con la posibilidad de personalizar y ver posts de cualquier temática.',
       icono: 'fas fa-blog',
@@ -96,9 +94,9 @@ export class MisProyectos {
       enlaceMasInfo: '#',
     },
     {
-      titulo: 'Cineflix',
+      titulo: 'CineFlix',
       descripcion:
-        'Actualemente estoy en 2ndo año de DAW, y junto a mis compañeros Pol Carvajal y Marc Mutantes estamos programando una página web donde donde cuentas con un gran catálogo de películas de todo tipo disponibles para ver!',
+        'Actualmente estoy en 2ndo año de DAW, y junto a mis compañeros Pol Carvajal y Marc Muntané estamos programando una página web donde donde cuentas con un gran catálogo de películas de todo tipo disponibles para ver!',
       icono: 'fas fa-film',
       imagen: 'assets/Proyectos/Cinefix/cineflix.png',
       tecnologias: [

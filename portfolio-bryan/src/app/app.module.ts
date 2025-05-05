@@ -9,7 +9,9 @@ import { SobremiComponent } from './sobremi/sobremi.component';
 import { MisProyectos } from './mis-proyectos/mis-proyectos.component';
 import { estudiosComponent } from './estudios/estudios.component';
 import { proyectoDetalles } from './proyecto/proyecto.component';
-
+import { HomeComponent } from './home-component/home.component';
+import { MiValorComponent } from './mi-valor/mi-valor.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +22,12 @@ import { proyectoDetalles } from './proyecto/proyecto.component';
     MisProyectos,
     estudiosComponent,
     proyectoDetalles,
+    HomeComponent,
+    MiValorComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

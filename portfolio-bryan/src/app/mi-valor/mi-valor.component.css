@@ -1,0 +1,100 @@
+.seccion {
+    padding: 0rem 2rem;
+    background-color: #450a0a;
+    color: white;
+    font-family: "Lato", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.user-logo {
+    font-size: 48px;
+    margin-right: 15px;
+    color: #ffffff;
+}
+
+.containerTitulo {
+    color: white;
+    font-size: 30px;
+    padding: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 30%;
+    margin: 40px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.containerTitulo:hover {
+    transform: translateY(-5px);
+}
+
+.containerTitulo h2 {
+    font-size: 36px;
+}
+
+
+
+.habilidades-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 5rem;
+    background-color: #000;
+    color: #fff;
+}
+
+.heading {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f00;
+    padding-bottom: 0.5rem;
+}
+
+.habilidad-card {
+    background-color: #1a1a1a;
+    border: 2px solid #f00;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+}
+
+.habilidad-card:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.card-icon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #f00;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #f00;
+    padding-bottom: 0.5rem;
+}
+
+.card-desc {
+    margin-top: 0.75rem;
+    line-height: 1.4;
+}

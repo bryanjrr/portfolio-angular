@@ -91,6 +91,8 @@
   padding: 20px;
   width: 65%;
   z-index: 10;
+  animation: transform 0.3s  ease-in-out;
+
 }
 
 .card-header {
@@ -111,7 +113,7 @@
 }
 
 .card-content p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
   text-align: justify;

@@ -26,7 +26,8 @@
     gap: 40px;
 }
 
-.frontend, .backend{
+.frontend,
+.backend {
     padding-bottom: 20px;
 }
 
@@ -76,6 +77,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(6px);
+    font-size: 18px;
 }
 
 .cardFront img {
@@ -106,7 +108,7 @@
     text-align: start;
 }
 
-.percentaje{
+.percentaje {
     padding: 10px;
     color: lightcoral;
     text-shadow: 0.5px 1px 1px;

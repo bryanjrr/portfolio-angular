@@ -1,5 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 
 @Component({
   selector: 'app-proyecto',
@@ -8,14 +11,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./proyecto.component.css'],
 })
 export class proyectoDetalles {
-  proyectoNombre!: string;
-
-  constructor(private route: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.proyectoNombre = this.route.snapshot.paramMap.get('nombre')!;
-  }
-
+  time: number = 5;
+  proyecto: any = null;
+  intervalo: any | null = null;
   proyectos: any[] = [
     {
       titulo: 'Gestión Personas',
@@ -174,9 +172,39 @@ export class proyectoDetalles {
       enlacesAdicionales: [],
     },
   ];
+  proyectoNombre!: string;
 
-  toggleMasInfo(index: number): void {
-    this.proyectos[index].mostrarMasInfo =
-      !this.proyectos[index].mostrarMasInfo;
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private router: Router,
+
+  ) { }
+
+  ngOnInit(): void {
+    this.proyectoNombre = this.route.snapshot.paramMap.get('nombre')!;
+    this.proyectos.forEach(element => {
+      if (element.titulo == this.proyectoNombre) {
+        this.proyecto = element;
+        if (this.proyecto.videos) {
+          this.proyecto.videos = this.proyecto.videos.map((video: any) => ({
+            ...video,
+            enlace: this.sanitizer.bypassSecurityTrustResourceUrl(video.enlace)
+          }));
+        }
+      }
+    });
+
+    if (!this.proyecto) {
+      this.time = 5;
+      this.intervalo = setInterval(() => {
+        if (this.time > 0) {
+          this.time--;
+        } else {
+          clearInterval(this.intervalo);
+          this.router.navigate(['/']);
+        }
+      }, 1000);
+    }
+
   }
+
+
 }
