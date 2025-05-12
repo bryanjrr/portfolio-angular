@@ -62,7 +62,6 @@
 
 .container .container-info img {
   width: 90%;
-
 }
 
 .container .container-info .container-logos {
@@ -216,7 +215,9 @@
 }
 
 @media (max-width: 768px) {
+
   .hobbies-container {
+    display: grid;
     justify-content: center;
   }
 
@@ -232,4 +233,6 @@
   .hobby-name span {
     font-size: 14px;
   }
+
+
 }

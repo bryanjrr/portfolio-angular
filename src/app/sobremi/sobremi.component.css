@@ -27,6 +27,14 @@
   transition: transform 0.3s ease;
 }
 
+@media (max-width:768px) {
+  .containerTitulo {
+    width: auto;
+  }
+
+  
+}
+
 .containerTitulo:hover {
   transform: translateY(-5px);
 }

@@ -13,4 +13,11 @@ export class HeaderComponent {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
+  menuAbierto: boolean = false;
+
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+
 }

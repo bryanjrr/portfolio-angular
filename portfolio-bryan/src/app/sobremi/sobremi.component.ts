@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import { ViewEncapsulation } from '@angular/core';
 declare var particlesJS: any;
 
 
@@ -7,7 +8,9 @@ declare var particlesJS: any;
   selector: 'app-sobremi',
   standalone: false,
   templateUrl: './sobremi.component.html',
-  styleUrls: ['./sobremi.component.css']
+  styleUrls: ['./sobremi.component.css'],
+  encapsulation: ViewEncapsulation.None // 👈 añade esto
+
 })
 export class SobremiComponent implements AfterViewInit {
 
