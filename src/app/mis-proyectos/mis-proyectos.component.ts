@@ -90,7 +90,7 @@ export class MisProyectos {
           ],
         },
       ],
-      enlaceRepositorio: '#',
+      enlaceRepositorio: 'https://github.com/bryanjrr/blog-bryan',
       enlaceMasInfo: '#',
     },
     {
@@ -112,7 +112,7 @@ export class MisProyectos {
           ],
         },
       ],
-      enlaceRepositorio: '#',
+      enlaceRepositorio: 'https://github.com/Peke2005/CineFlix_Frontend',
       enlaceMasInfo: '#',
     },
   ];
