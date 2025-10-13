@@ -1,136 +1,171 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
+/* --- ESTADO BASE: Header Inicial --- */
 .header {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px 40px;
-  background: linear-gradient(135deg, rgba(128, 0, 0, 0.7), rgba(80, 0, 0, 0.8));
-  border: 2px solid #FF0000;
-  border-radius: 12px;
-  position: relative;
-  z-index: 1000;
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(5px);
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px 40px; 
+    
+    background: linear-gradient(135deg, rgba(128, 0, 0, 0.7), rgba(80, 0, 0, 0.8));
+    border: 2px solid #FF0000;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1000;
+    
+    /* Transición suave y profesional */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    backdrop-filter: blur(5px);
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
+/* --- LOGO Y NOMBRE --- */
 .logo a {
-  color: #FFFFFF;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
+/* --- ENLACES DE NAVEGACIÓN --- */
 .nav-menu {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-menu a {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  position: relative;
-  padding-bottom: 5px;
-  cursor: pointer;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
 }
 
+/* Animación de la línea roja (más centrada y elegante) */
 .nav-menu a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #FF0000;
-  transition: width 0.3s ease-in-out;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #FF0000;
+    transform: translateX(-50%);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-menu a:hover::after,
 .nav-menu a.active-link::after {
-  width: 100%;
+    width: 100%;
 }
 
+/* --- ICONOS SOCIALES (DERECHA) --- */
 .social-icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .divider {
-  width: 1px;
-  height: 24px;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin-right: 15px;
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-right: 5px;
 }
 
 .social-icon {
-  font-size: 1.5rem;
-  transition: transform 0.3s ease;
+    font-size: 1.5rem; /* Tamaño general de los iconos */
+    color: #FFFFFF; 
+    transition: all 0.2s ease-out; 
+    text-shadow: none; 
 }
 
+/* AJUSTE ESPECÍFICO DEL TAMAÑO DEL ÍCONO DE TELÉFONO */
+.social-icon.phone {
+    font-size: 1.2rem; /* Tamaño ligeramente más pequeño para mejor armonía */
+    cursor: pointer;
+}
+
+/* Hover de iconos: Sutil desplazamiento y cambio a gris claro */
 .social-icon:hover {
-  transform: scale(1.2);
+    color: #CCCCCC; /* Un gris claro para el hover */
+    transform: translateY(-3px); /* Desplazamiento sutil hacia arriba */
 }
-
-.social-icon.github { color: #333; }
-.social-icon.linkedin { color: #0A66C2; }
 
 .menu-toggle {
-  display: none;
-  color: #FFFFFF;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Scrolled state */
-.header.scrolled {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 10px 40px;
-  border-radius: 0;
-  background: rgba(80, 0, 0, 0.9);
-}
-
-/* Responsive (Mobile) */
-@media (max-width: 768px) {
-  .nav-menu, .social-icons {
     display: none;
-  }
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
 
-  .menu-toggle {
-    display: block;
-  }
-
-  .header.open .nav-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
+/* --- ESTADO SCROLLED (DYNAMIC) --- */
+.header.scrolled {
+    width: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;
-    background-color: rgba(80, 0, 0, 0.95);
-    padding: 20px 0;
-  }
+    margin: 0;
+    
+    /* ALTURA AUMENTADA AL SCROLLEAR */
+    padding: 20px 40px; 
+    
+    border-radius: 0;
+    background: rgba(30, 0, 0, 0.95); 
+    border-color: rgba(255, 0, 0, 0.7); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+}
 
-  .header.open .nav-menu a {
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-  }
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    .nav-menu, .social-icons {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        padding: 15px 20px;
+    }
+
+    .header.scrolled {
+        padding: 15px 20px;
+    }
+
+    /* Estilos del menú abierto permanecen igual */
+    .header.open .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(80, 0, 0, 0.95);
+        padding: 20px 0;
+    }
+
+    .header.open .nav-menu a {
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+    }
 }
