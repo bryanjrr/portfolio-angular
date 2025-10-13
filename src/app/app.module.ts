@@ -12,11 +12,12 @@ import { proyectoDetalles } from './proyecto/proyecto.component';
 import { HomeComponent } from './home-component/home.component';
 import { MiValorComponent } from './mi-valor/mi-valor.component';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    HeaderComponent,
     TechIconsComponent,
     SobremiComponent,
     MisProyectos,
@@ -26,7 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     MiValorComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HeaderComponent, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
