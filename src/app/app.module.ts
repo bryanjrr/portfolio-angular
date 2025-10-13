@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { HeaderComponent } from './header/header.component';
 import { TechIconsComponent } from './tech-icons/tech-icons.component';
 import { SobremiComponent } from './sobremi/sobremi.component';
 import { MisProyectos } from './mis-proyectos/mis-proyectos.component';
@@ -12,6 +11,7 @@ import { proyectoDetalles } from './proyecto/proyecto.component';
 import { HomeComponent } from './home-component/home.component';
 import { MiValorComponent } from './mi-valor/mi-valor.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -27,8 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
     MiValorComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HeaderComponent, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HeaderComponent, // Import standalone component
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

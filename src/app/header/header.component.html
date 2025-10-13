@@ -1,21 +1,25 @@
-<header class="header">
-  <div class="header__container">
-    <a (click)="scrollTo('inicio')" class="header__logo">Bryan</a>
-
-    <nav class="header__nav" [ngClass]="{ 'is-open': isOpen }">
-      <a (click)="scrollTo('inicio')" class="header__link">Home</a>
-      <a (click)="scrollTo('sobremi')" class="header__link">About</a>
-      <a (click)="scrollTo('estudios')" class="header__link">Skills</a>
-      <a (click)="scrollTo('proyectos')" class="header__link">Projects</a>
-      <a (click)="scrollTo('contact')" class="header__link">Contact</a>
-    </nav>
-
-    <div class="header__social">
-      <a href="https://github.com/bryanjrr" target="_blank" class="header__social-link"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/bryan-jrr/" target="_blank" class="header__social-link"><i class="fab fa-linkedin"></i></a>
+<header class="header" [ngClass]="{ 'scrolled': isScrolled, 'open': isOpen }">
+  <div class="header-container">
+    <div class="logo">
+      <a (click)="scrollTo('inicio')">BRYAN JR</a>
     </div>
-
-    <div class="header__toggle" (click)="toggleMenu()">
+    <nav class="nav-menu">
+      <a (click)="scrollTo('inicio')" routerLink="/" routerLinkActive="active-link">HOME</a>
+      <a (click)="scrollTo('sobremi')" routerLink="/sobremi" routerLinkActive="active-link">ABOUT</a>
+      <a (click)="scrollTo('estudios')" routerLink="/estudios" routerLinkActive="active-link">SKILLS</a>
+      <a (click)="scrollTo('proyectos')" routerLink="/proyectos" routerLinkActive="active-link">PROJECTS</a>
+      <a (click)="scrollTo('contact')" routerLink="/contact" routerLinkActive="active-link">CONTACT</a>
+    </nav>
+    <div class="social-icons">
+      <div class="divider"></div>
+      <a href="https://github.com/bryanjrr" target="_blank" class="social-icon github">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/bryan-jrr/" target="_blank" class="social-icon linkedin">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <div class="menu-toggle" (click)="toggleMenu()">
       <i class="fas fa-bars"></i>
     </div>
   </div>
