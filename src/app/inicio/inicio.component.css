@@ -1,172 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Russo+One&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+/* --- Estilos de Layout y Posicionamiento --- */
 
-/* --- ESTILOS DE FONDO (DEGRADADO) --- */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
 .seccion-principal {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    padding: 30px 0;
-    overflow: hidden;
-    
-    background: linear-gradient(
-        145deg, 
-        #110000 0%,         
-        #330000 30%,         
-        #110000 70%,         
-        #000000 100%         
-    );
-    background-color: #000000; 
+    align-items: flex-start; /* Sube la tarjeta */
+    padding-top: 15vh; /* Ajusta la posición vertical */
+    padding-bottom: 30px;
+    background-color: #000000;
 }
 
-/* --- ESTILOS DE LA TARJETA (AUMENTADA) --- */
+/* --- ESTILOS DE MAT-CARD Y CONTENEDOR PRINCIPAL --- */
 .card-presentation {
-    position: relative;
-    display: flex;
-    align-items: center;
+    /* mat-elevation-z10 maneja la sombra de Material */
     width: 90%;
-    /* --- CAMBIO CLAVE: AUMENTAMOS EL TAMAÑO MÁXIMO DEL CUADRO --- */
-    max-width: 1100px; 
-    
-    padding: 60px; /* Aumentamos el padding para rellenar el espacio */
-    z-index: 10;
-    
+    max-width: 1000px; /* Tamaño máximo definido */
+    padding: 40px;
+    z-index: 1;
     border-radius: 12px;
-    border: 2px solid rgba(255, 0, 0, 0.3); 
-    box-shadow: 0px 0 10px rgba(255, 0, 0, 0.3); 
-    background: rgba(0, 0, 0, 0.85); 
-    
-    transition: all 0.5s ease-in-out; 
-    gap: 60px; /* Aumentamos el espacio entre las columnas */
+    background: #111111; /* Negro oscuro, mejor que #000000 puro */
+    border: 2px solid #FF0000; /* Borde rojo */
 }
 
-.card-presentation:hover {
-    box-shadow: 0px 0 20px rgba(255, 0, 0, 0.5); 
-}
-
-/* --- ESTRUCTURA INTERNA --- */
 .main-content {
     display: flex;
     gap: 50px;
     align-items: center;
 }
 
-/* --- FOTO Y SOCIAL LINKS --- */
-.profile-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.profile-photo {
-    /* --- CAMBIO CLAVE: AUMENTAMOS EL TAMAÑO DE LA FOTO --- */
-    width: 350px; 
-    height: 350px;
+/* --- FOTO Y ANIMACIÓN --- */
+.photo-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden; /* Necesario para los bordes redondeados */
+    border-radius: 8px; /* Bordes suaves */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); /* Sombra limpia */
     
-    border-radius: 15px;
+    /* Animación de la foto: Sutil zoom en hover */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1); 
+}
+
+.photo-container:hover {
+    transform: scale(1.03);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1); 
-    transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), transform 0.3s;
+    display: block;
 }
 
-.profile-photo:hover {
-    box-shadow: 0px 4px 30px rgba(255, 255, 255, 0.3);
-    transform: scale(1.02);
+/* --- TEXTO Y JERARQUÍA (COLOR BLANCO) --- */
+.text-content {
+    flex-grow: 1;
+    color: #FFFFFF;
 }
 
-.social-links-card {
+.text-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3rem; /* Tamaño prominente */
+    color: #FFFFFF; /* Nombre principal en BLANCO */
+    margin: 0;
+    margin-bottom: 5px; /* Separación del título */
+    text-transform: uppercase;
+}
+
+.text-content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #CCCCCC; /* Subtítulo en gris claro */
+    margin-top: 0;
+    padding-bottom: 5px;
+    /* Línea de acento con un borde más limpio */
+    border-bottom: 2px solid #FF0000; 
+    display: inline-block; /* Para que la línea se ajuste al texto */
+}
+
+/* --- LINKS SOCIALES (LIMPIO) --- */
+.social-links {
     display: flex;
     list-style: none;
     padding: 0;
-    gap: 25px;
+    margin-top: 30px;
+    gap: 20px;
 }
 
-.social-links-card i {
-    font-size: 1.8rem;
-    color: #FFFFFF;
-    transition: color 0.3s, transform 0.3s ease-out;
+.social-links li {
+    background: transparent;
+    transition: all 0.2s ease-out;
 }
 
-.social-links-card i:hover {
-    color: #FF0000;
-    transform: translateY(-5px); 
+.social-links i {
+    font-size: 2rem;
+    color: #FFFFFF; /* Iconos en blanco */
+    transition: color 0.3s, transform 0.3s;
 }
 
-/* --- INTRODUCCIÓN Y TEXTO --- */
-.intro-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
+/* Hover profesional: Sutil elevación y cambio de color a rojo acento */
+.social-links li:hover i {
+    color: #FF0000; /* Color de acento al hover */
+    transform: translateY(-5px); /* Elevación sutil */
 }
 
-.greeting {
-    font-size: 1.4rem; /* Ligeramente más grande */
-    color: #CCCCCC;
-    font-weight: 400;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
+/* --- SECCIÓN DE COMMITS --- */
+.github-activity {
+    margin-top: 30px;
+    padding-top: 15px;
+    
+    /* mat-divider tendrá un estilo por defecto de Material */
 }
 
-.name-title {
-    font-family: 'Russo One', sans-serif;
-    font-size: 4rem; /* Ligeramente más grande */
-    color: #FF0000; 
-    margin: 0;
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-
-.title-fullstack {
-    font-size: 2.2rem; /* Ligeramente más grande */
-    color: #FFFFFF; 
-    margin-top: 15px; /* Aumentamos margen */
-    padding-bottom: 5px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    border-bottom: 2px solid #FF0000; 
-    display: inline-block;
-}
-
-.impact-statement {
-    margin-top: 30px; /* Aumentamos margen */
-    max-width: 500px;
-}
-
-.impact-statement p {
-    font-size: 1.2rem; /* Ligeramente más grande */
-    line-height: 1.6;
+.activity-title {
+    font-size: 0.9rem;
     color: #AAAAAA;
-    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.placeholder-text {
+    font-style: italic;
+    color: #FF0000;
 }
 
 /* --- MEDIA QUERIES (Responsividad) --- */
 @media (max-width: 900px) {
-    .card-presentation {
+    .main-content {
         flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
         gap: 30px;
-        max-width: 90%; /* Ajuste para tablets */
     }
     
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .name-title {
-        font-size: 2.8rem;
-    }
-    
-    .title-fullstack {
-        font-size: 1.6rem;
+    .photo-container {
+        width: 250px;
+        height: 250px;
     }
 
-    .social-links-card {
-        justify-content: center;
+    .text-content {
+        text-align: center;
+    }
+    
+    .text-content h1, .text-content h2 {
+        display: block;
+        margin: 5px auto;
     }
 }

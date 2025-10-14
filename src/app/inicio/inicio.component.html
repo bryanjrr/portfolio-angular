@@ -1,25 +1,36 @@
 <section class="seccion-principal">
-    <div class="card-presentation">
-        
-        <div class="profile-area">
-            <img src="assets/foto.jpg" alt="Bryan Joya Rubio - Desarrollador Fullstack" class="profile-photo">
+    <div id="particles-js" style="background-color: black;"></div>
+    
+    <mat-card class="card-presentation mat-elevation-z10">
+        <div class="main-content">
+            <div class="photo-container">
+                <img src="assets/foto.jpg" alt="Bryan Joya Rubio">
+            </div>
             
-            <ul class="social-links-card">
-                <li><a target="_blank" href="https://github.com/bryanjrr/"><i class="fa-brands fa-github"></i></a></li>
-                <li><a target="_blank" href="https://www.linkedin.com/in/bryanjrr/"><i class="fa-brands fa-linkedin"></i></a></li>
-                <li><a href="https://drive.google.com/file/d/1X_4Rig2lyURtq2T5m6-5SxQ7-CW3FWaX/view?usp=sharing" target="_blank"><i class="fa-regular fa-file-lines"></i></a></li>
-            </ul>
-        </div>
-        
-        <div class="intro-area">
-            <h1 class="greeting">HOLA, SOY</h1>
-            <h1 class="name-title">BRYAN JOYA RUBIO</h1>
-            <h2 class="title-fullstack">Desarrollador Fullstack</h2>
-            
-            <div class="impact-statement">
-                <p>Especializado en crear soluciones web robustas y escalables con Angular.</p>
+            <div class="text-content">
+                <h1 class="nombre">BRYAN JOYA RUBIO</h1>
+                <h2 class="title-fullstack">Desarrollador Fullstack</h2>
+                
+                <ul class="social-links">
+                    <li><a target="_blank" href="https://github.com/bryanjrr/"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/bryanjrr/"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://drive.google.com/file/d/..." target="_blank"><i class="fa-regular fa-file-lines"></i></a></li>
+                </ul>
+                
+                <mat-divider></mat-divider>
+                <div class="github-activity">
+                    <p class="activity-title">Última actividad en GitHub:</p>
+                    <div class="commit-display">
+                        <div *ngIf="false" class="latest-commit">
+                            <span>🚀 [Mensaje del Commit]</span>
+                            <span class="commit-date">hace 5 minutos</span>
+                        </div>
+                        <div *ngIf="true" class="placeholder-text">
+                            Cargando datos de la API de GitHub...
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-    </div>
+    </mat-card>
 </section>
