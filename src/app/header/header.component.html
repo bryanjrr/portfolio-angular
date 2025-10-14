@@ -1,26 +1,30 @@
 <header class="header" [ngClass]="{ 'scrolled': isScrolled, 'open': isOpen }">
-  <div class="header-container">
-    <div class="logo">
-      <a (click)="scrollTo('inicio')">BRYAN JR</a>
+    <div class="header-container">
+        <div class="logo">
+            <a (click)="scrollTo('inicio')">BRYAN JR</a>
+        </div>
+        <nav class="nav-menu">
+            <a (click)="scrollTo('inicio')" routerLink="/" routerLinkActive="active-link">INICIO</a>
+            <a (click)="scrollTo('sobremi')" routerLink="/sobremi" routerLinkActive="active-link">SOBRE MÍ</a>
+            <a (click)="scrollTo('estudios')" routerLink="/estudios" routerLinkActive="active-link">HABILIDADES</a>
+            <a (click)="scrollTo('proyectos')" routerLink="/proyectos" routerLinkActive="active-link">PROYECTOS</a>
+            <a (click)="scrollTo('contact')" routerLink="/contact" routerLinkActive="active-link">MI VALOR</a>
+            <a (click)="scrollTo('valor')" routerLink="/valor" routerLinkActive="active-link">CONTACTO</a>
+        </nav>
+        <div class="social-icons">
+            <div class="divider"></div>
+            <a href="https://github.com/bryanjrr" target="_blank" class="social-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bryanjrr/" target="_blank" class="social-icon linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a (click)="scrollTo('contact')" class="social-icon phone">
+                <i class="fas fa-phone"></i> 
+            </a>
+        </div>
+        <div class="menu-toggle" (click)="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
-    <nav class="nav-menu">
-      <a (click)="scrollTo('inicio')" routerLink="/" routerLinkActive="active-link">HOME</a>
-      <a (click)="scrollTo('sobremi')" routerLink="/sobremi" routerLinkActive="active-link">ABOUT</a>
-      <a (click)="scrollTo('estudios')" routerLink="/estudios" routerLinkActive="active-link">SKILLS</a>
-      <a (click)="scrollTo('proyectos')" routerLink="/proyectos" routerLinkActive="active-link">PROJECTS</a>
-      <a (click)="scrollTo('contact')" routerLink="/contact" routerLinkActive="active-link">CONTACT</a>
-    </nav>
-    <div class="social-icons">
-      <div class="divider"></div>
-      <a href="https://github.com/bryanjrr" target="_blank" class="social-icon github">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/bryan-jrr/" target="_blank" class="social-icon linkedin">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
-    <div class="menu-toggle" (click)="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-  </div>
 </header>
