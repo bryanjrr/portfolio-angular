@@ -1,6 +1,6 @@
 .seccion {
   padding: 3rem 2rem;
-  background-color: #450a0a;
+  background-color: #0f172a;
   color: white;
   font-family: "Lato", sans-serif;
 }
@@ -33,7 +33,7 @@
 
 :host {
   display: block;
-  background-color: #450a0a;
+  background-color: #0f172a;
   padding: 40px;
   font-family: "Lato", sans-serif;
   color: #ffffff;

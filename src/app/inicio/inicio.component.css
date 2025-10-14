@@ -30,7 +30,7 @@
     z-index: 1;
     border-radius: 12px;
     background: #111111; /* Negro oscuro, mejor que #000000 puro */
-    border: 2px solid #FF0000; /* Borde rojo */
+    border: 2px solid #06b6d4; /* Borde de acento */
 }
 
 .main-content {
@@ -85,7 +85,7 @@
     margin-top: 0;
     padding-bottom: 5px;
     /* Línea de acento con un borde más limpio */
-    border-bottom: 2px solid #FF0000; 
+    border-bottom: 2px solid #3b82f6;
     display: inline-block; /* Para que la línea se ajuste al texto */
 }
 
@@ -109,9 +109,9 @@
     transition: color 0.3s, transform 0.3s;
 }
 
-/* Hover profesional: Sutil elevación y cambio de color a rojo acento */
+/* Hover profesional: Sutil elevación y cambio de color a acento */
 .social-links li:hover i {
-    color: #FF0000; /* Color de acento al hover */
+    color: #06b6d4; /* Color de acento al hover */
     transform: translateY(-5px); /* Elevación sutil */
 }
 
@@ -131,7 +131,7 @@
 
 .placeholder-text {
     font-style: italic;
-    color: #FF0000;
+    color: #3b82f6;
 }
 
 /* --- MEDIA QUERIES (Responsividad) --- */
