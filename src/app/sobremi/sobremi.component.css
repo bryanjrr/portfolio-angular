@@ -1,6 +1,6 @@
 .seccion {
   padding: 3rem 2rem;
-  background-color: #450a0a;
+  background-color: #0f172a;
   color: white;
   font-family: "Lato", sans-serif;
 }
@@ -143,7 +143,7 @@
 .info {
   font-size: 18px;
   padding: 20px;
-  background: linear-gradient(to right, #e74c3c, #c0392b);
+  background: linear-gradient(to right, #3b82f6, #0f172a);
   color: white;
   border-bottom-right-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -185,7 +185,7 @@
 
 .hobby-card {
   cursor: pointer;
-  background: linear-gradient(145deg, #f44336, #d32f2f);
+  background: linear-gradient(145deg, #3b82f6, #0f172a);
   border-radius: 10px;
   width: 150px;
   padding: 20px;
@@ -200,7 +200,7 @@
 .hobby-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(145deg, #d32f2f, #c62828);
+  background: linear-gradient(145deg, #06b6d4, #0f172a);
 }
 
 .hobby-icon {
