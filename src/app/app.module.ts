@@ -16,7 +16,6 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     InicioComponent,
-    HeaderComponent,
     TechIconsComponent,
     SobremiComponent,
     MisProyectos,
@@ -26,7 +25,7 @@ import { FooterComponent } from './footer/footer.component';
     MiValorComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HeaderComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
