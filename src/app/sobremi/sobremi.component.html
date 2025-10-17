@@ -1,74 +1,53 @@
-<section class="seccion">
-  <article class="containerTitulo">
-    <i class="fa-solid fa-user user-logo"></i>
-    <h2>Sobre Mi </h2>
-  </article>
-
-  <article class="container">
-    <div class="container-info">
-      <img src="assets/img/code.jpg" alt="code_img">
-
-      <div id="mapa" style="height: 400px;"></div>
-
-      <div class="container-logos">
-        <div class="containerIcono">
-          <i class="fa-solid fa-phone"></i><span>+34634408901</span>
-        </div>
-        <div class="containerIcono">
-          <i class="fa-solid fa-envelope"></i><span>{{email}}</span>
-        </div>
-
-        <div>
-          <div class="containerIcono">
-            <i class="fa-brands fa-linkedin"></i><span>bryaanjrr</span>
-          </div>
+<section class="seccion-sobre-mi" #section>
+  <div class="title-container">
+      <div class="section-title">
+        <i class="fa-solid fa-user"></i>
+        <h2>Sobre Mí</h2>
+      </div>
+  </div>
+  <div class="about-card">
+    <div class="left-column">
+      <h3>Información de Contacto</h3>
+      <div class="contact-list">
+        <a *ngFor="let item of contactInfo" [href]="item.link" target="_blank" class="contact-item">
+            <i [class]="item.icon"></i>
+            <span>{{item.text}}</span>
+        </a>
+      </div>
+      <h3 class="map-title">Ubicación</h3>
+      <div id="mapa"></div>
+    </div>
+    <div class="right-column">
+      <div class="accordion">
+        <div *ngFor="let section of accordionSections; let i = index" class="accordion-item">
+            <div class="accordion-header" (click)="toggleAccordion(i)">
+                <div class="header-content">
+                    <i [class]="'fa-solid ' + section.icon"></i>
+                    <h3>{{section.title}}</h3>
+                </div>
+                <i class="fa-solid fa-chevron-down" [class.rotated]="section.isExpanded"></i>
+            </div>
+            <div class="accordion-content" [class.expanded]="section.isExpanded">
+                <div class="content-wrapper">
+                    <p *ngIf="section.description" class="description">{{section.description}}</p>
+                    <div *ngIf="section.skills" class="skills-container">
+                        <div *ngFor="let skill of section.skills" class="skill-item">
+                            <span class="skill-name">{{skill.name}}</span>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" [style.width.%]="section.isExpanded ? skill.level * 20 : 0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="section.hobbies" class="hobbies-container">
+                        <div *ngFor="let hobby of section.hobbies" class="hobby-card">
+                            <i [class]="'fa-solid ' + hobby.icon"></i>
+                            <span>{{hobby.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </div>
-
-    <div>
-      <div class="container-info2">
-        <div *ngFor="let info of secciones">
-          <div class="dropdown">
-            <div class="flex dropdown-titulo">
-              <i class="fa-solid {{info.icono}}"></i>
-              <h3>{{info.nombre}}</h3>
-            </div>
-            <button class="dropdown-button">
-              <i class="fa-solid fa-angle-down"></i>
-            </button>
-          </div>
-          <div class="info">
-            <p *ngIf="info.descripcion">{{ info.descripcion }}</p>
-
-            <div *ngIf="info.habilidades">
-              <div class="habilidad" *ngFor="let habilidad of info.habilidades">
-                <div class="habilidad-row">
-                  <span class="habilidad-nombre">{{ habilidad.nombre }}</span>
-                  <div class="estrellas">
-                    <span *ngFor="let i of getArray(habilidad.nivel)">
-                      <i class="fa-solid fa-star"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div *ngIf="info.hobbies" class="hobbies-container">
-              <div class="hobby-card" *ngFor="let hobby of info.hobbies">
-                <div class="hobby-icon">
-                  <i class="fa-solid {{hobby.icono}}"></i>
-                </div>
-                <div class="hobby-name">
-                  <span>{{ hobby.nombre }}</span>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
+  </div>
 </section>
