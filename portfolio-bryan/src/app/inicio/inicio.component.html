@@ -1,30 +1,39 @@
 <section class="seccion-principal">
-  <div id="particles-js" style="background-color: black;"></div>
-  <div class="card-presentation">
-    <div class="flex">
-      <img src="assets/foto.jpg" alt="Bryan Joya Rubio">
-    </div>
-    <div class="flex flex-col">
-      <h1 class="nombre ">Bryan Joya Rubio</h1>
-      <h2>Desarrollador Web</h2>
-      <ul>
-        <li>
-          <a target="_blank" href="https://github.com/bryanjrr/">
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://www.linkedin.com/in/bryan-joya-rubio-039045275">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="./CV Bryan Joya.pdf">
-            <i class="fa-regular fa-file"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <mat-card class="card-presentacion mat-elevation-z16">
+        <div class="main-content">
+            
+            <div class="photo-container">
+                <img src="assets/foto.jpg" alt="Bryan Joya Rubio - Desarrollador Fullstack">
+            </div>
+            
+            <div class="text-content">
+                <h1 class="nombre">Bryan Joya Rubio</h1>
+                <h2 class="title-fullstack">Desarrollador Fullstack</h2>
+                
+                <p class="tagline">Transformando ideas en <strong>soluciones de software</strong> robustas y elegantes.</p>
+                
+                <ul class="social-links">
+                    <li><a target="_blank" href="https://github.com/bryanjrr/" title="Ver perfil de GitHub"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/bryanjrr/" title="Ver perfil de LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://drive.google.com/file/d/..." target="_blank" title="Descargar Currículum Vitae"><i class="fa-regular fa-file-lines"></i></a></li>
+                </ul>
+                
+                <mat-divider></mat-divider>
+                
+                <div class="github-activity">
+                    <p class="activity-title">Última actividad en GitHub:</p>
+                    <div class="commit-display">
+                        <div *ngIf="isLoading" class="placeholder-text">
+                            <span>Conectando con la API de GitHub...</span>
+                        </div>
+                        <div *ngIf="!isLoading && latestCommitInfo" class="latest-commit">
+                            <span class="commit-repo">{{ latestCommitInfo.repo }}:</span>
+                            <span class="commit-message">{{ latestCommitInfo.message }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </mat-card>
+</section>

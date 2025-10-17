@@ -21,7 +21,6 @@ import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
     TechIconsComponent,
     SobremiComponent,
     MisProyectos,
@@ -36,6 +35,7 @@ import { MatDividerModule } from '@angular/material/divider';
     AppRoutingModule,
     RouterModule,
     HeaderComponent, // Import standalone component
+    InicioComponent, // Import standalone component
     HttpClientModule,
     MatCardModule,
     MatDividerModule,

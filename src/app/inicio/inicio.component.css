@@ -1,157 +1,316 @@
-/* --- Estilos de Layout y Posicionamiento --- */
+/* --- VARIABLES Y FUENTES --- */
+:host {
+  --color-dark-bg: #0A0A1F;
+  --color-card-bg: rgba(24, 24, 41, 0.8);
+  --color-accent-primary: #00F0FF;
+  --color-accent-secondary: #3B82F6;
+  --color-text-light: #F0F4F8;
+  --color-text-secondary: #A0AEC0;
+  font-family: 'Inter', sans-serif;
 
-#particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+  /* Contenedor para el fondo de partículas */
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
+/* --- ANIMACIONES --- */
+@keyframes fadeInSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-accent-primary); }
+}
+
+/* Animación escalonada para iconos sociales */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* --- FONDO DE PARTÍCULAS (TSParticles) --- */
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* CORREGIDO: Coloca el fondo detrás de todo */
+}
+
+/* --- LAYOUT PRINCIPAL --- */
 .seccion-principal {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Sube la tarjeta */
-    padding-top: 15vh; /* Ajusta la posición vertical */
-    padding-bottom: 30px;
-    background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Cambiado para alinear arriba */
+  padding: 2rem;
+  padding-top: 15vh; /* Añadido para bajar la tarjeta del borde superior */
+  position: relative;
+  z-index: 2;
 }
 
-/* --- ESTILOS DE MAT-CARD Y CONTENEDOR PRINCIPAL --- */
-.card-presentation {
-    /* mat-elevation-z10 maneja la sombra de Material */
-    width: 90%;
-    max-width: 1000px; /* Tamaño máximo definido */
-    padding: 40px;
-    z-index: 1;
-    border-radius: 12px;
-    background: #111111; /* Negro oscuro, mejor que #000000 puro */
-    border: 2px solid #06b6d4; /* Borde de acento */
+/* --- TARJETA PRINCIPAL (GLASSMORPHISM) --- */
+.card-presentacion {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  padding: 3.5rem;
+  border-radius: 16px;
+  background: var(--color-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(0, 240, 255, 0.2);
 }
 
+/* --- CONTENIDO PRINCIPAL (FOTO Y TEXTO) --- */
 .main-content {
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* --- Columna Izquierda (Foto y Redes Sociales) --- */
+.left-column {
     display: flex;
-    gap: 50px;
+    flex-direction: column;
     align-items: center;
+    gap: 1.5rem; /* Espacio entre la foto y los iconos */
+    padding-right: 3.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- FOTO Y ANIMACIÓN --- */
+/* --- FOTO --- */
 .photo-container {
-    width: 300px;
-    height: 300px;
-    overflow: hidden; /* Necesario para los bordes redondeados */
-    border-radius: 8px; /* Bordes suaves */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); /* Sombra limpia */
-    
-    /* Animación de la foto: Sutil zoom en hover */
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1); 
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid transparent;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  animation: fadeInSlideUp 0.5s ease-out forwards;
 }
-
-.photo-container:hover {
-    transform: scale(1.03);
+.photo-container::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 12px; padding: 2px;
+  background: linear-gradient(45deg, var(--color-accent-secondary), var(--color-accent-primary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out; mask-composite: exclude;
+  opacity: 0.7; transition: opacity 0.4s ease;
 }
+.photo-container:hover { transform: scale(1.05) translateY(-5px); }
+.photo-container:hover::before { opacity: 1; }
+.photo-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.photo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* --- TEXTO Y JERARQUÍA (COLOR BLANCO) --- */
-.text-content {
-    flex-grow: 1;
-    color: #FFFFFF;
-}
-
-.text-content h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 3rem; /* Tamaño prominente */
-    color: #FFFFFF; /* Nombre principal en BLANCO */
-    margin: 0;
-    margin-bottom: 5px; /* Separación del título */
-    text-transform: uppercase;
-}
-
-.text-content h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #CCCCCC; /* Subtítulo en gris claro */
-    margin-top: 0;
-    padding-bottom: 5px;
-    /* Línea de acento con un borde más limpio */
-    border-bottom: 2px solid #3b82f6;
-    display: inline-block; /* Para que la línea se ajuste al texto */
-}
-
-/* --- LINKS SOCIALES (LIMPIO) --- */
+/* --- Enlaces Sociales --- */
 .social-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem; /* Espacio entre iconos */
+  width: 100%;
 }
 
-.social-links li {
-    background: transparent;
-    transition: all 0.2s ease-out;
+.social-links a {
+    opacity: 0; /* Oculto para la animación */
+    animation: popIn 0.5s ease-out forwards;
 }
 
-.social-links i {
-    font-size: 2rem;
-    color: #FFFFFF; /* Iconos en blanco */
-    transition: color 0.3s, transform 0.3s;
+/* Animación escalonada */
+.social-links a:nth-child(1) { animation-delay: 0.6s; }
+.social-links a:nth-child(2) { animation-delay: 0.7s; }
+.social-links a:nth-child(3) { animation-delay: 0.8s; }
+
+
+.social-links a i {
+  font-size: 1.8rem;
+  color: var(--color-text-secondary);
+  transition: all 0.3s ease;
 }
 
-/* Hover profesional: Sutil elevación y cambio de color a acento */
-.social-links li:hover i {
-    color: #06b6d4; /* Color de acento al hover */
-    transform: translateY(-5px); /* Elevación sutil */
+.social-links a:hover i {
+  color: var(--color-accent-primary);
+  transform: scale(1.2) translateY(-3px);
+  text-shadow: 0 0 15px var(--color-accent-primary);
 }
 
-/* --- SECCIÓN DE COMMITS --- */
-.github-activity {
-    margin-top: 30px;
-    padding-top: 15px;
-    
-    /* mat-divider tendrá un estilo por defecto de Material */
+/* --- TEXTO Y JERARQUÍA --- */
+.text-content {
+  flex-grow: 1;
+  color: var(--color-text-light);
+}
+.text-content > * {
+  opacity: 0;
+  animation: fadeInSlideUp 0.6s ease-out forwards;
+}
+.text-content h1 { animation-delay: 0.2s; }
+.text-content h2 { animation-delay: 0.3s; }
+.text-content .tagline { animation-delay: 0.4s; }
+.text-content .divider { animation-delay: 0.5s; }
+.text-content .github-activity { animation-delay: 0.6s; }
+
+.text-content h1.nombre {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--color-text-light);
+  margin: 0 0 5px 0;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+}
+.text-content h2.title-fullstack {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-accent-primary);
+  margin: 0 0 1.5rem 0;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cursor {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 1.5rem;
+    background-color: var(--color-accent-primary);
+    animation: blink-caret 0.75s step-end infinite;
 }
 
+.tagline {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+.divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, var(--color-accent-primary), transparent);
+  margin-bottom: 1.5rem;
+}
+
+/* --- SECCIÓN DE GITHUB --- */
+.github-activity { margin-top: 1.5rem; }
 .activity-title {
-    font-size: 0.9rem;
-    color: #AAAAAA;
-    margin-bottom: 10px;
+  font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 1rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.github-activity-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--color-accent-primary);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.github-activity-card:hover { 
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+.repo-name {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.1rem; font-weight: 600; color: var(--color-text-light); margin-bottom: 8px;
+}
+.repo-name i { color: var(--color-accent-primary); }
+.commit-message span { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--color-text-secondary); }
+.placeholder-text span { font-style: italic; color: var(--color-accent-secondary); animation: pulse 1.5s infinite; }
+
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 1024px) {
+  .card-presentacion {
+    padding: 2.5rem;
+  }
+  .left-column {
+    padding-right: 2.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .main-content {
+    gap: 2.5rem;
+  }
+  .photo-container {
+    width: 220px;
+    height: 220px;
+  }
+   .text-content h1.nombre { font-size: 2.8rem; }
 }
 
-.placeholder-text {
-    font-style: italic;
-    color: #3b82f6;
+
+@media (max-width: 850px) {
+  .seccion-principal {
+    padding-top: 10vh;
+  }
+  .main-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .card-presentacion {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-column {
+    padding-right: 0;
+    border-right: none;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+  .photo-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.5rem;
+  }
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  .text-content h1.nombre { font-size: 2.5rem; }
+  .divider {
+      background: var(--color-accent-primary);
+      height: 1px;
+      width: 80px;
+      margin: 0 auto 1.5rem auto;
+  }
+  .tagline {
+    max-width: 100%;
+  }
 }
 
-/* --- MEDIA QUERIES (Responsividad) --- */
-@media (max-width: 900px) {
-    .main-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .photo-container {
-        width: 250px;
-        height: 250px;
-    }
-
-    .text-content {
-        text-align: center;
-    }
-    
-    .text-content h1, .text-content h2 {
-        display: block;
-        margin: 5px auto;
-    }
+@media (max-width: 480px) {
+  .seccion-principal { padding: 1rem; padding-top: 8vh; }
+  .card-presentacion { padding: 2rem 1.5rem; }
+  .photo-container {
+    width: 160px;
+    height: 160px;
+  }
+  .text-content h1.nombre { font-size: 2rem; }
+  .text-content h2.title-fullstack { font-size: 1.2rem; }
+  .tagline { font-size: 1rem; }
+  .social-links a i { font-size: 1.5rem; }
 }
+

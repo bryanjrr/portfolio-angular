@@ -1,52 +1,35 @@
-declare var particlesJS: any;
+import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../services/github.service';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
-import { Component, AfterViewInit } from '@angular/core';
+// La interfaz puede ir aquí o en su propio archivo
+export interface LatestCommitInfo {
+  repo: string;
+  message: string;
+}
 
 @Component({
   selector: 'app-inicio',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule, MatCardModule, MatDividerModule],
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
-export class InicioComponent implements AfterViewInit {
+export class InicioComponent implements OnInit {
 
-  ngAfterViewInit(): void {
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 800
-          }
-        },
-        color: {
-          value: "#ffffff"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5
-        },
-        size: {
-          value: 3
-        },
-        move: {
-          enable: true,
-          speed: 2
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse"
-          }
-        }
-      },
-      retina_detect: true
+  latestCommitInfo: LatestCommitInfo | null = null;
+  isLoading = true;
+
+  constructor(private githubService: GithubService) {}
+
+  ngOnInit(): void {
+    this.githubService.getLatestCommitInfo('bryanjrr').subscribe(info => {
+      this.latestCommitInfo = info;
+      this.isLoading = false;
     });
   }
+
+  // ngAfterViewInit ya no es necesario, puedes eliminarlo por completo.
 }
